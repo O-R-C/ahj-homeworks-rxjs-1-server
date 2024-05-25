@@ -13,23 +13,17 @@ class Messages extends ArrayStorage {
   #init() {
     this.#timer && clearInterval(this.#timer)
 
-    this.#generateMessages()
-    this.#timer = setInterval(this.#generateMessages, 5000)
+    this.#generateMessage()
+    this.#timer = setInterval(this.#generateMessage, 5000)
   }
 
-  #generateMessages = () => {
-    this.clear()
-    this.#addMessages(this.#getRandom())
+  #generateMessage = () => {
+    this.length > 10 && this.clear()
+    this.#addMessage()
   }
 
-  #addMessages(count) {
-    for (let i = 0; i <= count; i++) {
-      this.push(new FakeMessage())
-    }
-  }
-
-  #getRandom() {
-    return Math.floor(Math.random() * 10)
+  #addMessage() {
+    this.push(new FakeMessage())
   }
 }
 

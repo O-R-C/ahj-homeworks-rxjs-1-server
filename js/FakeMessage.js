@@ -10,7 +10,7 @@ class FakeMessage {
     this.from = this.#createEmailAddress()
     this.subject = this.#createSubject()
     this.body = faker.lorem.sentence()
-    this.received = moment(faker.date.past()).format('HH:mm DD.MM.YYYY')
+    this.received = moment(Date.now()).format('HH:mm DD.MM.YYYY')
   }
 
   #createFullName() {
