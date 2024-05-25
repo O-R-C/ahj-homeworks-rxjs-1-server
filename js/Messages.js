@@ -13,7 +13,8 @@ class Messages extends ArrayStorage {
   #init() {
     this.#timer && clearInterval(this.#timer)
 
-    this.#timer = setInterval(this.#generateMessages(), 5000)
+    this.#generateMessages()
+    this.#timer = setInterval(this.#generateMessages, 5000)
   }
 
   #generateMessages = () => {

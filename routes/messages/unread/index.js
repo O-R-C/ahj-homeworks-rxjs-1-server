@@ -10,7 +10,7 @@ router.get('/messages/unread', async (ctx) => {
   ctx.body = JSON.stringify({
     status: 'ok',
     timestamp: Date.now(),
-    messages: messages.get(),
+    messages: JSON.stringify(messages.get()),
   })
 })
 
