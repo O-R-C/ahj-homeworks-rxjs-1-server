@@ -14,9 +14,8 @@ class FakeMessage {
   }
 
   #createFullName() {
-    return faker.person.fullName({
-      sex: this.#getGender(),
-    })
+    const gender = this.#getGender()
+    return `${faker.person.firstName(gender)} ${faker.person.lastName(gender)}`
   }
 
   #getGender() {
